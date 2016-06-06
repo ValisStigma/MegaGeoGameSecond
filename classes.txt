@@ -1,3 +1,101 @@
+CREATE TABLE public.classes
+(
+  "number" text NOT NULL,
+  points integer,
+  trend integer,
+  match integer,
+  state integer,
+  name text,
+  former_place integer,
+  CONSTRAINT classes_pkey PRIMARY KEY (number)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.classes
+  OWNER TO dgibhwjhbemyxu;
+
+
+CREATE TABLE public.instructions
+(
+  level integer NOT NULL,
+  instruction text,
+  CONSTRAINT instructions_pkey PRIMARY KEY (level)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.instructions
+  OWNER TO dgibhwjhbemyxu;
+
+
+CREATE TABLE public.level1
+(
+  class text NOT NULL,
+  points integer,
+  CONSTRAINT level1_pkey PRIMARY KEY (class)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.level1
+  OWNER TO dgibhwjhbemyxu;
+
+
+CREATE TABLE public.level2
+(
+  class text NOT NULL,
+  points integer,
+  CONSTRAINT level2_pkey PRIMARY KEY (class)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.level2
+  OWNER TO dgibhwjhbemyxu;
+
+CREATE TABLE public.level3
+(
+  class text NOT NULL,
+  numb integer,
+  CONSTRAINT level3_pkey PRIMARY KEY (class)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.level3
+  OWNER TO dgibhwjhbemyxu;
+
+CREATE TABLE public.level4
+(
+  class text NOT NULL,
+  socks integer,
+  CONSTRAINT level4_pkey PRIMARY KEY (class)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.level4
+  OWNER TO dgibhwjhbemyxu;
+
+
+
+CREATE TABLE public.maps
+(
+  level integer NOT NULL,
+  map_link text,
+  CONSTRAINT maps_pkey PRIMARY KEY (level)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.maps
+  OWNER TO dgibhwjhbemyxu;
+
+
+
+
+
 DELETE FROM classes
 DELETE FROM level_1
 DELETE FROM instructions
