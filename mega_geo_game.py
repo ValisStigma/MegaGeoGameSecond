@@ -31,19 +31,19 @@ QUERY_GET_LEVEL = ["http://services1.arcgis.com/6RDtDcHz3yZdtEVu/ArcGIS/rest/ser
                                                                        "=1%3D1&outFields=Status&f=pjson"]
 
 QUERY_LEVEL_1 = [
-    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m1_sek1/FeatureServer/0/query?where=Gruppe%3D%27",
+    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m1_sek2/FeatureServer/0/query?where=Gruppe%3D%27",
     '''%27&units=esriSRUnit_Meter&returnGeometry=true&outFields=Flaeche&f=pjson''']
 
 QUERY_LEVEL_2 = [
-    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m2_sek1/FeatureServer/0/query?where=Gruppe%3D%27",
+    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m2_sek2/FeatureServer/0/query?where=Gruppe%3D%27",
     '''%27&outFields=Nummer_Eingabe%2C+Nummer_Loesung&f=pjson&''']
 
 QUERY_LEVEL_3 = [
-    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m3_sek1/FeatureServer/0/query?where=Gruppe%3D%27",
+    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m3_sek2/FeatureServer/0/query?where=Gruppe%3D%27",
     '''%27&units=esriSRUnit_Meter&returnGeometry=true&f=pjson''']
 
 QUERY_LEVEL_4 = [
-    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m4_sek1/FeatureServer/0/query?where=Gruppe%3D%27",
+    "http://services1.arcgis.com/6RDtDcHz3yZdtEVu/arcgis/rest/services/mgg2016_m4_sek2/FeatureServer/0/query?where=Gruppe%3D%27",
     '''%27&units=esriSRUnit_Meter&returnGeometry=true&f=pjson''']
 
 QUERY_POINTS = "SELECT points FROM classes WHERE number = %s"
@@ -51,16 +51,16 @@ UPDATE_POINTS_QUERY = "UPDATE classes SET points = %s WHERE number = %s"
 GET_PLAYER_QUERY = "SELECT points, name, match, state, former_place, trend from classes WHERE number = %s"
 
 PLAYER_IDS = [
-    'A1',
-    'B1',
-    'C1',
-    'D1',
-    'E1',
-    'F1',
-    'G1',
-    'H1',
-    'I1',
-    'J1'
+    'A2',
+    'B2',
+    'C2',
+    'D2',
+    'E2',
+    'F2',
+    'G2',
+    'H2',
+    'I2',
+    'J2'
 ]
 VALID_LEVELS = [1, 2, 3, 4, 5, 6, 7]
 VALID_STATES = ['weiss', 'schwarz']
