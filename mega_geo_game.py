@@ -27,7 +27,7 @@ CONNECTION = psycopg2.connect(
 
 CURSOR = CONNECTION.cursor()
 
-QUERY_GET_LEVEL = ["http://services1.arcgis.com/6RDtDcHz3yZdtEVu/ArcGIS/rest/services/mgg2016_gamestate_m", "_sek1/FeatureServer/0/query?where"
+QUERY_GET_LEVEL = ["http://services1.arcgis.com/6RDtDcHz3yZdtEVu/ArcGIS/rest/services/mgg2016_gamestate_m", "_sek2/FeatureServer/0/query?where"
                                                                        "=1%3D1&outFields=Status&f=pjson"]
 
 QUERY_LEVEL_1 = [
@@ -56,12 +56,15 @@ PLAYER_IDS = [
     'C2',
     'D2',
     'E2',
-    'F2',
-    'G2',
-    'H2',
-    'I2',
-    'J2'
+    'F2'
 ]
+
+CLASS_NAMES = {'A2': '2eN - St. Gallen',
+               'B2': 'G3e - Bern',
+               'C2': '19qA - Bern',
+               'D2': 'M3d - Bern',
+               'E2': '4c - Zürich',
+               'F2': 'N15b - Solothurn'}
 VALID_LEVELS = [1, 2, 3, 4, 5, 6, 7]
 VALID_STATES = ['weiss', 'schwarz']
 
@@ -258,7 +261,7 @@ def get_classes_in_statistics(curr_level):
                 if(len(features)) > 0:
                     level_points = features[0]['attributes']['Flaeche']
             else:
-                level_points = len(features)
+                level_points = len(features) * 2
             CURSOR.execute(select_old_points, (player_id,))
             old_points = CURSOR.fetchone()[0]
             CURSOR.execute(QUERY_POINTS, (player_id,))
@@ -307,7 +310,7 @@ def get_ranking():
     curr_places = []
     for curr_class in classes:
         class_text = (
-            curr_class['class_name'] +
+            CLASS_NAMES[curr_class['class_id']] +
             '<div class="points_ranking" style="float: right;" >' +
             str(curr_class['points']) +
             ' points' +
@@ -339,6 +342,3 @@ def get_instruction_header(current_level, level):
     else:
         return 'Playing'
 
-
-if __name__ == '__main__':
-    APP.run()
