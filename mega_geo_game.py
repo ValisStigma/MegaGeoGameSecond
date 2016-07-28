@@ -15,15 +15,32 @@ DATABASE_URL = (
     '''postgres://hfkywxmjzvxfxd:kywhqy5_GZ0dPBKlXDXYRyKZBs@ec2-54-247-185-241.eu-west-1.compute.amazonaws.com:5432/dd7ilvk41ei9ro'''
 )
 urlparse.uses_netloc.append("postgres")
-URL = urlparse.urlparse(os.environ['DATABASE_URL'])
+#URL = urlparse.urlparse(os.environ['DATABASE_URL'])
 
 CONNECTION = psycopg2.connect(
-    database=URL.path[1:],
-    user=URL.username,
-    password=URL.password,
-    host=URL.hostname,
-    port=URL.port
+    database="dd7ilvk41ei9ro",
+    user="hfkywxmjzvxfxd",
+    password="kywhqy5_GZ0dPBKlXDXYRyKZBs",
+    host="ec2-54-247-185-241.eu-west-1.compute.amazonaws.com",
+    port="5432"
     )
+
+MANUAL_STATS = {
+    1: [{"name": "A2", "points": 76}, {"name": "B2", "points": 210}, {"name": "C2", "points": 106},
+        {"name": "D2", "points": 110}, {"name": "E2", "points": 262}, {"name": "F2", "points": 61}
+        ],
+    2: [{"name": "A2", "points": 150}, {"name": "B2", "points": 150}, {"name": "C2", "points": 150},
+        {"name": "D2", "points": 150}, {"name": "E2", "points": 100}, {"name": "F2", "points": 150}],
+    3: [{"name": "A2", "points": 128}, {"name": "B2", "points": 105}, {"name": "C2", "points": 101},
+        {"name": "D2", "points": 101}, {"name": "E2", "points": 181}, {"name": "F2", "points": 102}],
+    4: [{"name": "A2", "points": 8}, {"name": "B2", "points": 3}, {"name": "C2", "points": 3},
+        {"name": "D2", "points": 3}, {"name": "E2", "points": 1}, {"name": "F2", "points": 6}],
+    5: [{"name": "A2", "points": 80}, {"name": "B2", "points": 68}, {"name": "C2", "points": 90},
+        {"name": "D2", "points": 90}, {"name": "E2", "points": 40}, {"name": "F2", "points": 20}],
+    6: [{"name": "A2", "points": 0}, {"name": "B2", "points": 0}, {"name": "C2", "points": 0},
+        {"name": "D2", "points": 0}, {"name": "E2", "points": 40}, {"name": "F2", "points": 100}],
+    7: [{"name": "A2", "points": 0}, {"name": "B2", "points": 0}, {"name": "C2", "points": 50},
+        {"name": "D2", "points": 50}, {"name": "E2", "points": 0}, {"name": "F2", "points": 25}]}
 
 CURSOR = CONNECTION.cursor()
 
@@ -176,7 +193,8 @@ def elements_for_manual_mode(curr_level, clicked_level):
         stats=stats,
         header=header,
         instruction=instruction_panel_text,
-        map=map_iframe
+        map=map_iframe,
+        ranking=MANUAL_STATS[clicked_level]
     )
 
 
@@ -185,7 +203,7 @@ def update():
     curr_level = int(request.args.get('current_level'))
     curr_state = request.args.get('current_state')
     if not curr_level in VALID_LEVELS:
-        curr_level = 0
+        curr_level = 1
     instruction_panel_text = get_instruction(curr_level)
     instruction_panel_heading = ''
     if curr_level == 0:
@@ -336,9 +354,12 @@ def get_map(level):
 
 def get_instruction_header(current_level, level):
     if current_level > level:
-        return 'Passed'
+        return 'Aktueller Auftrag'
     elif current_level < level:
-        return 'Not Started'
+        return 'Aktueller Auftrag'
     else:
-        return 'Playing'
+        return 'Aktueller Auftrag'
 
+
+if __name__ == '__main__':
+    APP.run()

@@ -2,7 +2,6 @@ function update_ranking() {
     "use strict";
     if (manual_mode === 0) {
         $.getJSON('/_get_current_ranking', {current_level: current_level, current_state: current_state}, function (data) {
-            var place1, place2, place3, place4, place5, place6;
             var ranking = data.ranking;
             for(var i = 0; i < ranking.length; i++) {
                 $("#place" + (i + 1) ).html((i + 1) + '. ' + ranking[i]);
@@ -20,11 +19,11 @@ function update_ranking() {
                 }
                 var label = "Points";
                 if(current_level === 3) {
-                    label = 'Bikes';
+                    label = 'Urban Gardening';
                 }
 
                 else if(current_level === 4) {
-                    label = 'Android Users';
+                    label = 'Smartwatches';
                 }
 
                 var myChart = new Chart(canvas, {

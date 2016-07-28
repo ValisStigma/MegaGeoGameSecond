@@ -1,0 +1,69 @@
+DELETE FROM classes
+DELETE FROM instructions
+DELETE FROM maps
+DELETE FROM level1
+DELETE FROM level2
+DELETE FROM level3
+DELETE FROM level4
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('A2', 0, 0, 0, 'Klasse A', 1)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('B2', 0, 0, 0, 'Klasse B', 2)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('C2', 0, 0, 0, 'Klasse C', 3)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('D2', 0, 0, 0, 'Klasse D', 4)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('E2', 0, 0, 0, 'Klasse E', 5)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('F2', 0, 0, 0, 'Klasse F', 6)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('G2', 0, 0, 0, 'Klasse G', 4)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('H2', 0, 0, 0, 'Klasse H', 5)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('I2', 0, 0, 0, 'Klasse I', 6)
+INSERT INTO classes("number", points, trend, match, name, former_place) VALUES ('J2', 0, 0, 0, 'Klasse J', 6)
+INSERT INTO public.instructions(level, instruction) VALUES (1, 'Findet in der Schweiz einen Standort mit einem Durchmesser von 15 km, welcher eine möglichst grosse Aussichtsfläche bietet.');
+INSERT INTO public.instructions(level, instruction) VALUES (2, 'Weist die 3 Bilder den richtigen 3 Standorten in eurem Sektor zu.');
+INSERT INTO public.instructions(level, instruction) VALUES (3, 'Urban Gardening: Die grünen Kleinoasen der Berner Altstadt: Finde von Menschen hergerichtete Vegegation wie Kröge, Töpfe, Kisten usw.  in deinem Sektor. Beweist euren Fund mit einem Foto, auf welchem eines eurer GeoSummit-Ticket zu sehen ist.');
+INSERT INTO public.instructions(level, instruction) VALUES (4, 'Finde die WaerableUser! Beweist euren Fund mit einem Foto, auf welchem eines eurer GeoSummit-Ticket zu sehen ist.');
+INSERT INTO public.instructions(level, instruction) VALUES (5, 'SchweizerKreuz-Mapping: Mit 5 GPS-Koordinate von Tractalis-Trackern ein gleichseitiges, rechtwinkliges CH-Kreuz bauen. Bewertung nach 10 Minuten');
+INSERT INTO public.instructions(level, instruction) VALUES (6, 'w3w Challenge: Das Vermessen unseres Planeten ergibt viele geografische Rekorde.');
+INSERT INTO public.maps(level, map_link) VALUES(1, '<iframe width="100%" height="407" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://schoolgis.maps.arcgis.com/apps/PublicInformation/index.html?appid=32b9d01fda0d4f599c2a53ece4c3cea0"></iframe>')
+INSERT INTO public.maps(level, map_link) VALUES(2, '<iframe width="100%" height="407" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://schoolgis.maps.arcgis.com/apps/PublicInformation/index.html?appid=2f7e809a18fc4468978ea28dbddfbd1f"></iframe>')
+INSERT INTO public.maps(level, map_link) VALUES(3, '<iframe width="100%" height="407" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://schoolgis.maps.arcgis.com/apps/PublicInformation/index.html?appid=213df2037ca14930bb43347342d58589"></iframe>')
+INSERT INTO public.maps(level, map_link) VALUES(4, '<iframe width="100%" height="407" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://schoolgis.maps.arcgis.com/apps/PublicInformation/index.html?appid=91675f933f344ab88b271aad808ea768"></iframe>')
+INSERT INTO public.maps(level, map_link) VALUES(5, '<iframe width="100%" height="407" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://schoolgis.maps.arcgis.com/apps/PublicInformation/index.html?appid=9909910c36324f6a8c4f8fbab0c2847f"></iframe>')
+INSERT INTO public.maps(level, map_link) VALUES(6, '<iframe width="100%" height="407" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://tests.christiansailer.ch/games/w3w2/"></iframe>')
+INSERT INTO level3(class, numb) VALUES ('A2', 0);
+INSERT INTO level3(class, numb) VALUES ('B2', 0);
+INSERT INTO level3(class, numb) VALUES ('C2', 0);
+INSERT INTO level3(class, numb) VALUES ('D2', 0);
+INSERT INTO level3(class, numb) VALUES ('E2', 0);
+INSERT INTO level3(class, numb) VALUES ('F2', 0);
+INSERT INTO level3(class, numb) VALUES ('G2', 0);
+INSERT INTO level3(class, numb) VALUES ('H2', 0);
+INSERT INTO level3(class, numb) VALUES ('I2', 0);
+INSERT INTO level3(class, numb) VALUES ('J2', 0);
+INSERT INTO level4(class, socks) VALUES ('A2', 0);
+INSERT INTO level4(class, socks) VALUES ('B2', 0);
+INSERT INTO level4(class, socks) VALUES ('C2', 0);
+INSERT INTO level4(class, socks) VALUES ('D2', 0);
+INSERT INTO level4(class, socks) VALUES ('E2', 0);
+INSERT INTO level4(class, socks) VALUES ('F2', 0);
+INSERT INTO level4(class, socks) VALUES ('G2', 0);
+INSERT INTO level4(class, socks) VALUES ('H2', 0);
+INSERT INTO level4(class, socks) VALUES ('I2', 0);
+INSERT INTO level4(class, socks) VALUES ('J2', 0);
+INSERT INTO level1(class, points) VALUES ('A2', 0);
+INSERT INTO level1(class, points) VALUES ('B2', 0);
+INSERT INTO level1(class, points) VALUES ('C2', 0);
+INSERT INTO level1(class, points) VALUES ('D2', 0);
+INSERT INTO level1(class, points) VALUES ('E2', 0);
+INSERT INTO level1(class, points) VALUES ('F2', 0);
+INSERT INTO level1(class, points) VALUES ('G2', 0);
+INSERT INTO level1(class, points) VALUES ('H2', 0);
+INSERT INTO level1(class, points) VALUES ('I2', 0);
+INSERT INTO level1(class, points) VALUES ('J2', 0);
+INSERT INTO level2(class, points) VALUES ('A2', 0);
+INSERT INTO level2(class, points) VALUES ('B2', 0);
+INSERT INTO level2(class, points) VALUES ('C2', 0);
+INSERT INTO level2(class, points) VALUES ('D2', 0);
+INSERT INTO level2(class, points) VALUES ('E2', 0);
+INSERT INTO level2(class, points) VALUES ('F2', 0);
+INSERT INTO level2(class, points) VALUES ('G2', 0);
+INSERT INTO level2(class, points) VALUES ('H2', 0);
+INSERT INTO level2(class, points) VALUES ('I2', 0);
+INSERT INTO level2(class, points) VALUES ('J2', 0);
